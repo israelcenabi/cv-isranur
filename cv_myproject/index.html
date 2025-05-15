@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>İsranur Elcenabi - Özgeçmiş</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>İsranur Elcenabi</h1>
+            <p>Bilgisayar Mühendisliği Öğrencisi</p>
+            <p><strong>İletişim:</strong> elcenabiisranur@gmail.com | (+90) 507 040 72 95 | İstanbul / Kartal</p>
+        </header>
+
+        <section>
+            <h2>Hakkımda</h2>
+            <p>
+                Üniversite eğitimim boyunca temel mühendislik derslerinin yanı sıra Database with SQL, Internet Based Programming (HTML/CSS),
+                Object Oriented Programming (Java) ve Görüntü İşleme (Python), Derin Öğrenme, Makine Öğrenmesi gibi konularda kendimi geliştirme
+                fırsatım oldu. Özellikle ADAS sistemleri ve görüntü işleme konularına olan ilgim, bu alanda daha derin bilgi ve tecrübe kazanma isteğimi artırdı.
+            </p>
+        </section>
+
+        <section>
+            <h2>Projeler</h2>
+            <ul>
+                <li><strong>Teknofest Elektrikli Araç</strong> (19 Şubat 2025 - Devam Ediyor) <br> ADAS fonksiyonları ve görüntü işleme pozisyonu</li>
+                <li><strong>Altium Designer Eğitimi</strong> (8 Şubat 2025 - 24 Şubat 2025) <br> PCB prototipi oluşturma ve birleştirme</li>
+                <li><strong>Frontend Geliştirme</strong> (13 Aralık 2023 - 3 Ocak 2024) <br> HTML ve CSS eğitimi</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Eğitim</h2>
+            <ul>
+                <li><strong>Karabük Üniversitesi</strong> (2022 - 2027) <br> Bilgisayar Mühendisliği (%30 İngilizce)</li>
+                <li><strong>Şile Anadolu İmam Hatip Fen ve Sosyal Bilimler Proje Lisesi</strong> (2018 - 2022) <br> Fen Bilimleri Proje Sınıfı – <em>Okul Birinciliği</em></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Yetenekler</h2>
+            <input type="text" id="skillSearch" placeholder="Bir yetenek ara... (örn: Python)">
+            <ul class="skills" id="skillsList">
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>C</li>
+                <li>C#</li>
+                <li>HTML/CSS</li>
+                <li>SQL</li>
+                <li>Nesne Yönelimli Programlama</li>
+                <li>ROS</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Diller</h2>
+            <ul>
+                <li>İngilizce – B2</li>
+                <li>Arapça – A2</li>
+            </ul>
+        </section>
+
+        <button id="darkModeBtn">🌙 Gece Modunu Aç</button>
+
+        <footer>
+            <p>&copy; 2025 İsranur Elcenabi</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 1. Sayfa yüklendiğinde kullanıcıya mesaj göster
+        window.onload = function () {
+            alert("Hoş geldiniz! İsranur Elcenabi'nin özgeçmişine göz atıyorsunuz.");
+        };
+
+        // 2. Yetenek arama filtreleme
+        const skillInput = document.getElementById("skillSearch");
+        const skills = document.getElementById("skillsList").getElementsByTagName("li");
+
+        skillInput.addEventListener("input", function () {
+            const query = skillInput.value.toLowerCase();
+            for (let i = 0; i < skills.length; i++) {
+                const skill = skills[i].textContent.toLowerCase();
+                skills[i].style.display = skill.includes(query) ? "inline-block" : "none";
+            }
+        });
+
+        // 3. Gece Modu (Dark Mode)
+        const darkModeBtn = document.getElementById("darkModeBtn");
+        darkModeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            darkModeBtn.textContent = document.body.classList.contains("dark-mode")
+                ? "☀️ Gündüz Moduna Geç"
+                : "🌙 Gece Modunu Aç";
+        });
+    </script>
+</body>
+</html>
